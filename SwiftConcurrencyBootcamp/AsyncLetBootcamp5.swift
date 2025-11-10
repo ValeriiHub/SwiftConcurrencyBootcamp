@@ -10,10 +10,10 @@ import SwiftUI
 struct AsyncLetBootcamp5: View {
     
     @State private var images: [UIImage] = []
-    @State private var title = "Async Let 🥳"
+    @State private var title = "Async Let"
     
-    let colums = [GridItem(.flexible()), GridItem(.flexible())]
-    let url = URL(string: "https://picsum.photos/200")!
+    private let colums = [GridItem(.flexible()), GridItem(.flexible())]
+    private let url = URL(string: "https://picsum.photos/200")!
     
     var body: some View {
         NavigationStack {
