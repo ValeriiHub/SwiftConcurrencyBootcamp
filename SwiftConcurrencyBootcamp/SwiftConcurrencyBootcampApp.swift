@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftConcurrencyBootcampApp: App {
     var body: some Scene {
         WindowGroup {
-            CheckedContinuationBootcamp7()
+            ActorsBootcamp9()
         }
     }
 }
