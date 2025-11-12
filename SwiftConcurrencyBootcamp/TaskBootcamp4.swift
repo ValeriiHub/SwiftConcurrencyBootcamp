@@ -90,6 +90,10 @@ struct TaskBootcamp4: View {
 //                print(Task.currentPriority)
 //            }
             
+            // Task.yield() - приостанавливает выполнение текущей задачи и передает управление планировщику
+            // Позволяет другим задачам с таким же или более высоким приоритетом выполниться первыми
+            // Используется для предотвращения блокировки потока длительными операциями
+            
 //            Task(priority: .high) {
 //                try? await  Task.yield()
 //                print("high : \(Thread.current) : \(Task.currentPriority)")
