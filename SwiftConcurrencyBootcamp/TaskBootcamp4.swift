@@ -118,17 +118,26 @@ struct TaskBootcamp4: View {
 //                print("background : \(Thread.current) : \(Task.currentPriority)")
 //            }
             
-//            Task(priority: .low) {
-//                print("userInitiated : \(Thread.current) : \(Task.currentPriority)")
-//            
-//                Task.detached {
-//                    print("detached : \(Thread.current) : \(Task.currentPriority)")
-//                }
-//            }
+            
+            /* Обычный Task наследует контекст от родителя (приоритет, actor, task-local values). Task.detached создает полностью независимую задачу:
+             - НЕ наследует приоритет родительской задачи (будет .medium по умолчанию)
+             - НЕ наследует actor context (не привязана к MainActor)
+             - НЕ наследует task-local values
+             - НЕ отменяется автоматически при отмене родительской задачи
+             Используйте detached когда задача действительно независима от контекста
+             
+            Task(priority: .low) {
+                print("userInitiated : \(Thread.current) : \(Task.currentPriority)")
+            
+                Task.detached {
+                    print("detached : \(Thread.current) : \(Task.currentPriority)")
+                }
+            }
+             */
         }
-//        .onDisappear {
-//            fetchImageTask?.cancel()
-//        }
+        .onDisappear {
+            fetchImageTask?.cancel()
+        }
 //        .task {
 //            await viewModel.fetchImage()
 //        }
